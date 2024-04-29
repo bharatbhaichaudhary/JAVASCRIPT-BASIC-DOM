@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+      h1 {
+        color: brown;
+        text-align: center;
+      }
+      h2 {
+        color: crimson;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Basic logic Question</h1>
+
+    <h2>Q.1 What is JavaScript. How to use it?</h2>
+    <p>
+      => JavaScript is commonly used for creating web pages. It allows us to add
+      dynamic behavior to the webpage and add special effects to the webpage. On
+      websites, it is mainly used for validation purposes. JavaScript helps us
+      to execute complex actions and also enables the interaction of websites
+      with visitors. Using JavaScript, it is also possible to load the content
+      in a document without reloading the webpage.
+    </p>
+
+    <h2>Q.2 How many type of Variable in JavaScript?</h2>
+    <p>=> There are 3 types of variables in JavaScript : var,let and const</p>
+
+    <h2>Q.3 Define a Data Types in js?</h2>
+    <p>
+      =>Data types in JavaScript define the data type that a variable can store.
+      JavaScript includes primitive and non-primitive data types. The primitive
+      data types in JavaScript include string, number, boolean, undefined, null,
+      and symbol. The non-primitive data type includes the object.
+    </p>
+
+    <h2>
+      Q.4 Write a mul Function Which will Work Properly When invoked With
+      Following Syntax
+    </h2>
+    <p>=>72,370</p>
+    <script>
+      function mul(x) {
+        return function (y) {
+          return function (z) {
+            return x * y * z;
+          };
+        };
+      }
+      mul(2)(4)(9);
+      mul(10)(37)(1);
+    </script>
+
+    <h2>
+      Q.5 What the deference between undefined and undeclare in JavaScript?
+    </h2>
+    <p>
+      =>Undeclared variables are those that have not been declared or defined in
+      the current scope, while undefined variables are those that have been
+      declared but not given a value.
+    </p>
+
+    <h2>
+      Q.6 Using console.log() print out the following statement: The quote
+      'There is no exercise better for the heart than reaching down and lifting
+      people up.' by John Holmes teaches us to help one another. Using
+      console.log() print out the following quote by Mother Teresa:
+    </h2>
+    <p>=></p>
+    <script>
+      console.log(
+        "The quote'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another."
+      );
+    </script>
+
+    <h2>
+      .7 Check if typeof '10' is exactly equal to 10. If not make it exactly
+      equal?
+    </h2>
+    <p>=>number</p>
+    <script>
+      console.log(typeof 10); //number
+    </script>
+    <h2>Q.8 Write a JavaScript Program to find the area of a triangle?</h2>
+    <p>=></p>
+    <script>
+      const triArea = (a, b, c) => {
+        let s = (a + b + c) / 2;
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+      };
+      console.log(triArea(1, 1, 1));
+      console.log(triArea(5, 7, 8));
+      console.log(triArea(1, 1, -1));
+      console.log(triArea(5, -7, -8));
+    </script>
+
+    <h2>
+      Q.9 Write a JavaScript program to calculate days left until next
+      Christmas?
+    </h2>
+    <p>=></p>
+    <script>
+      today = new Date();
+      var cmas = new Date(today.getFullYear(), 11, 25);
+      if (today.getMonth() == 11 && today.getDate() > 25) {
+        cmas.setFullYear(cmas.getFullYear() + 1);
+      }
+      var one_day = 1000 * 60 * 60 * 24;
+      console.log(
+        Math.ceil((cmas.getTime() - today.getTime()) / one_day) +
+          " days left until Christmas!"
+      );
+    </script>
+
+    <h2>Q.10 What is Condition Statement?</h2>
+    <p>
+      =>Conditional statements are those statements where a hypothesis is
+      followed by a conclusion. It is also known as an " If-then" statement. If
+      the hypothesis is true and the conclusion is false, then the conditional
+      statement is false. Likewise, if the hypothesis is false the whole
+      statement is false.
+    </p>
+
+    <h2>Q.11 Find circumference of Rectangle formula : C = 4 * a ?</h2>
+    <p>=>20</p>
+    <script>
+      function areaRectangle(c, a) {
+        let area = c * a;
+        return area;
+      }
+      console.log(areaRectangle(4, 5));
+    </script>
+
+    <h2>Q.12 WAP to convert years into days and days into years?</h2>
+    <p>=></p>
+    <script>
+      function convertYearsToDays(years) {
+        return years * 365.25;
+      }
+      
+      console.log(convertYearsToDays(2));
+
+      function convertDaysToYears(days) {
+        return days / 365.25;
+      }
+      console.log(convertDaysToYears(700));
+    </script>
+
+    <h2>
+      Q.13 Convert temperature Fahrenheit to Celsius? (Conditional logic
+      Question)
+    </h2>
+    <p>
+      =>
+      <label>Fahrenheit</label>
+      <input
+        id="inputFahrenheit"
+        type="number"
+        placeholder="Fahrenheit"
+        oninput="temperatureConverter(this.value)"
+        onchange="temperatureConverter(this.value)"
+      />
+    </p>
+    <p>Celcius: <span id="outputCelcius"></span></p>
+
+    <script>
+      function temperatureConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputCelcius").innerHTML =
+          (valNum - 32) / 1.8;
+      }
+    </script>
+
+    <h2>
+      Q.14 Write a JavaScript exercise to get the extension of a filename.?
+    </h2>
+    <p>=></p>
+
+    <script>
+      // program to get the file extension
+
+      function getFileExtension(filename) {
+        // get file extension
+        const extension = filename.split(".").pop();
+        return extension;
+      }
+
+      // passing the filename
+      const result1 = getFileExtension("module.js");
+      console.log(result1);
+
+      const result2 = getFileExtension("module.txt");
+      console.log(result2);
+    </script>
+
+    <h2>
+      Q.15 What is the result of the expression<!-- (5 > 3 && 2 < 4)?  -->
+    </h2>
+    <p>=>true</p>
+    <script>
+      console.log(5 > 3 && 2 < 4);
+    </script>
+
+    <h2>Q.16 What is the result of the expression (true && 1 && "hello")?</h2>
+    <p>=>hello</p>
+    <script>
+      console.log(true && 1 && "hello");
+    </script>
+
+    <h2>
+      Q.17 What is the result of the expression true && false || false && true?
+    </h2>
+    <p>=>false</p>
+    <script>
+      console.log((true && false) || (false && true));
+    </script>
+
+    <h2>Q.18 What is a Loop and Switch Case in JavaScript define that ?</h2>
+    <p>=></p>
+    <script>
+      for (var i = 0; i <= 10; i++) {
+        switch (true) {
+          case i % 3 === 0: //if
+            console.log(i, "Foo");
+            break;
+          case i % 5 === 0: //else if
+            console.log(i, "Bar");
+            break;
+          default: //else
+            console.log(i, "Default");
+            break;
+        }
+      }
+    </script>
+
+    <h2>Q.19 What is the use of is Nan function?</h2>
+    <p>
+      =>isNaN() returns true if a number is Not-a-Number. In other words:
+      isNaN() converts the value to a number before testing it.
+    </p>
+
+    <h2>Q.20 What is the difference between && and || in JavaScript?</h2>
+    <p>&&=>True only if both exp1 and exp2 are true; otherwise, false.</p>
+    <p>
+      ||=> True if either exp1 or exp2 is true; false (0) only if both are
+      false.
+    </p>
+
+    <h2>Q.21 What is the use of Void (0)?</h2>
+    <p>
+      =>JavaScript void 0 means returning undefined (void) as a primitive value.
+      You might come across the term “JavaScript:void(0)” while going through
+      HTML documents. It is used to prevent any side effects caused while
+      inserting an expression in a web page.
+    </p>
+
+    <h2>Q.22 Check Number Is Positive or Negative in JavaScript?</h2>
+    <p>=></p>
+    <script>
+      function isVowel(x) {
+        var result;
+        result = x == "A" || x == "E" || x == "I" || x == "O" || x == "U";
+        return result;
+      }
+      var input;
+      do {
+        input = prompt("Enter a character ");
+        if (input.length == 1) {
+          alert(isVowel(input));
+        }
+      } while (input.length != 1);
+    </script>
+
+    <h2>Q.24 Write to check whether a number is negative, positive or zero?</h2>
+    <p>=></p>
+    <script>
+      function NumberSignChecker(n) {
+        if (n > 0) {
+          console.log("Positive number");
+        } else if (n < 0) {
+          console.log("Negative number");
+        } else {
+          console.log("Zero");
+        }
+      }
+      let number1 = -5;
+      let number2 = 5;
+      let number3 = 0;
+
+      NumberSignChecker(number1);
+      NumberSignChecker(number2);
+      NumberSignChecker(number3);
+    </script>
+
+    <h2>
+      Q.25 Write to find number is even or odd using ternary operator in JS?
+    </h2>
+    <p>=></p>
+    <script>
+      const number = prompt("Enter a number: ");
+      number % 2 == 0
+        ? alert("The number is even.")
+        : alert("The number is odd.");
+    </script>
+
+    <h2>
+      Q.26 Write find maximum number among 3 numbers using ternary operator in
+      JS?
+    </h2>
+    <p>=>10</p>
+    <script>
+      let a = 5;
+      let b = 4;
+      let c = 10;
+      let x = a > b ? (a < c ? c : a) : b > c ? b : c;
+      console.log(x);
+    </script>
+    <h2>
+      Q.27 Write to find minimum number among 3 numbers using ternary operator
+      in JS?
+    </h2>
+    <p>=>10</p>
+    <script>
+      let z = 30 > 20 ? (30 > 10 ? 10 : 30) : 20 > 10 ? 10 : 20;
+      console.log(z);
+    </script>
+
+    <h2>Q.28 Write to find the largest of three numbers in JS?</h2>
+    <p>=></p>
+    <script>
+      // declaring the variables
+      let num1 = 30;
+      let num2 = 70;
+      let num3 = 15;
+      let largestNum;
+
+      if (num1 > num2 && num1 > num3) {
+        largestNum = num1;
+      } else if (num2 > num1 && num2 > num3) {
+        largestNum = num2;
+      } else {
+        largestNum = num3;
+      }
+      console.log(largestNum);
+    </script>
+
+    <h2>Q.29 Write to show</h2>
+    <h4>i. Monday to Sunday using switch case in JS?</h4>
+    <p>
+      => Enter a number: <input type="text" id="numberDay" />
+      <button id="button">OK</button>
+    </p>
+    <script>
+      let clickButton = document.getElementById("button");
+      clickButton.addEventListener("click", function weekDay() {
+        let day = Number(document.getElementById("numberDay").value);
+
+        switch (day) {
+          case 0:
+            document.write("It's Sunday!");
+            break;
+          case 1:
+            alert("It's Monday");
+            document.write("It's Monday");
+            break;
+          case 2:
+            alert("It's Tuesday");
+            document.write("It's Tuesday");
+            break;
+          case 3:
+            document.write("It's Wednesday");
+            break;
+          case 4:
+            document.write("It's Thursday");
+            break;
+          case 5:
+            document.write("It's Friday");
+            break;
+          case 6:
+            document.write("It's Saturday");
+            break;
+        }
+      });
+    </script>
+
+    <h4>ii. Vowel or Consonant using switch case in JS?</h4>
+    <p>
+      =>
+      <input type="text" id="first" />
+      <button onclick="vowel()">Submit</button>
+    </p>
+    <script>
+      var ch;
+      function vowel() {
+        ch = document.getElementById("first").value;
+        switch (ch) {
+          case "a":
+          case "e":
+          case "i":
+          case "o":
+          case "u":
+          case "A":
+          case "E":
+          case "I":
+          case "O":
+          case "U":
+            document.write("vowel character");
+            break;
+          default:
+            document.write("Not an vowel");
+            break;
+        }
+      }
+    </script>
+
+    <h1>Conditional looping logic Question</h1>
+
+    <h2>
+      Q.30 What are the looping structures in JavaScript? Any one Example?
+    </h2>
+    <p>
+      =>In javascript , loops are handy tools that allow you to repeat
+      instructions. There are various types of loops, including for, while,
+      do-while, nested, and for each loops. Each loop has its own purpose and
+      usage.
+    </p>
+    <script>
+      for (let i = 0; i < 5; i++) {
+        console.log(i);
+      }
+    </script>
+
+    <h2>Q.31 Write a print 972 to 897 using for loop in JS?</h2>
+    <p>=></p>
+    <script>
+      for (let w = 972; w >= 897; w--) {
+        console.log(w);
+      }
+    </script>
+
+    <h2>Q.32 Write to print factorial of given number?</h2>
+    <p>=>120</p>
+    <script>
+      //5!//
+      let num = 5;
+      for (let i = num; i > 1; ) {
+        i = i - 1;
+        var fac = num * i;
+        num = fac;
+      }
+      console.log(fac);
+    </script>
+
+    <h2>Q.33 Write to print Fibonacci series up to given numbers?</h2>
+    <p>=></p>
+    <script>
+      let n1 = 0,
+        n2 = 1,
+        nextTerm;
+      let number11 = 10;
+      for (let i = 1; i <= number11; i++) {
+        nextTerm = n1 + n2;
+        n1 = n2;
+        n2 = nextTerm;
+      }
+      console.log(nextTerm);
+    </script>
+
+    <h2>
+      Q.34 Write to print number in reverse order e.g.: number = 64728 --
+      reverse =82746 in JS?
+    </h2>
+    <p>=></p>
+    <script>
+      let n22 = [6, 4, 7, 2, 8];
+      let n212 = n22.reverse();
+      console.log(n212);
+    </script>
+
+    <h2>
+      Q.35 Write a program make a summation of given number (E.g., 1523 Ans: -
+      11) in JS?
+    </h2>
+    <p>=>11</p>
+    <script>
+      var q = 0;
+      let num222 = 1523;
+      let str222 = num222.toString();
+      for (a of str222) {
+        q = Number(a) + q;
+      }
+      console.log(q);
+    </script>
+
+    <h2>
+      Q.36 Write a program you have to make a summation of first and last Digit.
+      (E.g., 1234 Ans: - 5) in JS?
+    </h2>
+    <p>=></p>
+    <script>
+      let e = 1234;
+      let ee = e.toString();
+      let ww = ee.length;
+      let eee = ee[0];
+      let eee1 = ee[ww - 1];
+      let e12 = Number(eee);
+      let e13 = Number(eee1);
+      let zz = e12 + e13;
+      console.log(zz);
+    </script>
+    <h2>
+      Q.37 Use console.log() and escape characters to print the following
+      pattern in JS?
+    </h2>
+    <p>=></p>
+
+    <script>
+      for (let i = 1; i <= 5; i++) {
+        let a = "";
+        for (let j = 1; j <= 5; j++) {
+          if (j == 1 || j == 3) {
+            a = a + " " + i;
+          } else if (j == 2) {
+            a = a + " " + 1;
+          } else if (j == 4) {
+            a = a + " " + i * i;
+          } else if (j == 5) {
+            a = a + " " + i * i * i;
+          }
+        }
+        console.log(a);
+      }
+    </script>
+
+    <h2>Q.38 Use pattern in console.log in JS?</h2>
+    <p>=></p>
+    <script>
+      // *
+      // * *
+      // * * *
+      // * * * *
+      // * * * * *
+
+      for (let i = 1; i <= 5; i++) {
+        let m = "";
+        for (let j = 1; j <= i; j++) {
+          m = m + " *";
+        }
+        console.log(m);
+      }
+
+      // 1
+      // 2 3
+      // 4 5 6
+      // 7 8 9 10
+      // 11 12 13 14 15
+      let w = 0;
+      for (let i = 1; i <= 5; i++) {
+        let m = "";
+        for (let k = 1; k <= i; k++) {
+          w = w + 1;
+          m = m + " " + w;
+        }
+        console.log(m);
+      }
+
+      // 1
+      // 1 0
+      // 1 0 1
+      // 1 0 1 0
+      // 1 0 1 0 1
+      let qq = 0;
+      for (let i = 1; i <= 5; i++) {
+        let s = "";
+        for (let j = 1; j <= i; j++) {
+          s = s + " " + (j % 2);
+        }
+        console.log(s);
+      }
+
+      let l = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+      ];
+
+      f = 0;
+      for (let i = 1; i <= 5; i++) {
+        let z = "";
+        for (let j = 1; j <= i; j++) {
+          z = z + " " + l[f];
+          f++;
+        }
+        console.log(z);
+      }
+    </script>
+    <h2>
+      Q.39 Accept 3 numbers from user using while loop and check each numbers
+      palindrome?
+    </h2>
+    <p>=></p>
+    <script>
+      // Function to check if a number is a palindrome
+      function isPalindrome(number) {
+        const numStr = number.toString();
+        const numArr = numStr.split("");
+        return numArr.every(
+          (num, index) => num === numArr[numArr.length - 1 - index]
+        );
+      }
+
+      // Accept three numbers from the user
+      let count = 1;
+      while (count <= 1) {
+        const num = parseInt(prompt(`Enter number ${count}:`));
+        console.log(
+          `${num} is ${
+            isPalindrome(num) ? "a palindrome" : "not a palindrome"
+          }.`
+        );
+        count++;
+      }
+    </script>
+
+    <h1>Array and object Question</h1>
+
+    <h2>
+      Q.40 Write a JavaScript Program to display the current day and time in the
+      following format. Sample Output: Today is Friday. Current Time is 12 PM:
+      12 : 22 2 ?
+    </h2>
+    <p>=></p>
+
+    <script>
+      // var today = new Data();
+      var day = today.getDay();
+      var daylist = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday ",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      console.log("Today is :" + daylist[day] + ".");
+      var hour = today.getHours();
+      var minute = today.getMinutes();
+      var second = today.getSeconds();
+      var prepand = hour >= 12 ? "PM" : "Am";
+      hour = hour >= 12 ? hour - 12 : hour;
+      if (hour === 0 && prepand === "PM") {
+        if (minute === 0 && second === 0) {
+          hour = 12;
+          prepand = "Noon";
+        } else {
+          hour = 12;
+          prepand = " PM";
+        }
+      }
+      if (hour === 0 && prepand === " AM ") {
+        if (minute === 0 && second === 0) {
+          hour = 12;
+          prepand = " Midnight";
+        } else {
+          hour = 12;
+          prepand = " AM";
+        }
+      }
+      console.log(
+        "Current Time: " + hour + prepand + " : " + minute + " : " + second
+      );
+    </script>
+
+    <h2>Q.41 Write a JavaScript program to get the current date?</h2>
+    <p>=></p>
+    <script>
+      var curday = function (sp) {
+        today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //As January is 0.
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) dd = "0" + dd;
+        if (mm < 10) mm = "0" + mm;
+        return mm + sp + dd + sp + yyyy;
+      };
+      console.log(curday("/"));
+      console.log(curday("-"));
+    </script>
+
+    <h2>Q.42 Write a JavaScript program to compare two objects?</h2>
+    <p>=></p>
+    <script>
+      const obj1 = { a: 1, b: 2 };
+      const obj2 = { a: 1, b: 2 };
+      console.log(JSON.stringify(obj1) === JSON.stringify(obj2));
+    </script>
+
+    <h2>
+      Q.43 Write a JavaScript program to convert an array of objects into CSV
+      string?
+    </h2>
+    <p>=></p>
+    <script>
+      const JSON_to_CSV = (arr, columns, delimiter = ",") =>
+        [
+          columns.join(delimiter),
+          ...arr.map((obj) =>
+            columns.reduce(
+              (acc, key) =>
+                `${acc}${!acc.length ? "" : delimiter}"${
+                  !obj[key] ? "" : obj[key]
+                }"`,
+              ""
+            )
+          ),
+        ].join("\n");
+
+      console.log(
+        JSON_to_CSV(
+          [{ x: 100, y: 200 }, { x: 300, y: 400, z: 500 }, { x: 6 }, { y: 7 }],
+          ["x", "y"]
+        )
+      );
+    </script>
+    <h2>
+      Q.44 Write a JavaScript program to capitalize first letter of a string?
+    </h2>
+    <p>=></p>
+    <script>
+      function capitalizeFLetter() {
+        let string = "geeksforgeeks";
+        console.log(string[0].toUpperCase() + string.slice(1));
+      }
+      capitalizeFLetter();
+    </script>
+
+    <h2>
+      Q. 45 Write a JavaScript program to determine if a variable is array?
+    </h2>
+    <p>=></p>
+    <script>
+      let arr = [1, 2, 3, 4];
+      let ass = Array.isArray(arr);
+      console.log(ass);
+    </script>
+
+    <h2>Q.46 Write a JavaScript program to clone an array?</h2>
+    <p>=></p>
+    <script>
+      let arr2 = [1, 2, 3];
+      let arr3 = [...arr2];
+      console.log(arr3);
+    </script>
+
+    <h2>
+      Q.47 What is the drawback of declaring methods directly in JavaScript
+      objects?
+    </h2>
+    <p>
+      =>
+      <li>
+        When you define a method directly within an object, it becomes specific
+        to that object instance.
+      </li>
+      <li>
+        Other instances of the same object type won’t share the same method.
+        This lack of reusability can lead to code duplication.
+      </li>
+      <li>
+        In contrast, defining methods on the prototype allows all instances of
+        the same type to share the same method.
+      </li>
+    </p>
+
+    <h2>
+      Q.48 Print the length of the string on the browser console using
+      console.log()?
+    </h2>
+    <p>=>6</p>
+    <script>
+      let str = "bharat";
+      console.log(str.length);
+    </script>
+
+    <h2>
+      Q.49 Change all the string characters to capital letters using
+      toUpperCase() method?
+    </h2>
+    <p>=>BHARAT</p>
+    <script>
+      let str1 = "bharat";
+      let str3 = str1.toUpperCase();
+    </script>
+
+    <h2>
+      Q.50 What is the drawback of declaring methods directly in JavaScript
+      objects?
+    </h2>
+    <p>=> Q.47</p>
+
+    <h2>
+      Q.51 Write a JavaScript program to get the current date. Expected Output :
+      mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy?
+    </h2>
+    <p>=>04/26/2024 636 26/04/2024, 635 04-26-2024, 636 26-04-2024,</p>
+    <script>
+      var curday = function (sp) {
+        today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //As January is 0.
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) dd = "0" + dd;
+        if (mm < 10) mm = "0" + mm;
+        console.log(mm + sp + dd + sp + yyyy);
+        console.log(dd + sp + mm + sp + yyyy);
+      };
+      curday("/");
+      curday("-");
+    </script>
+
+    <h2>
+      Q.52 Use indexOf to determine the position of the first occurrence of a in
+      30 Days Of JavaScript?
+    </h2>
+    <p>=>4</p>
+    <script>
+      let str_1 = "30 Days Of JavaScript";
+      let str_2 = str_1.indexOf("a");
+    </script>
+
+    <h2>
+      Q,53 Use lastIndexOf to determine the position of the last occurrence of a
+      in 30 Days Of JavaScript?
+    </h2>
+    <p>=>14</p>
+    <script>
+      let str_3 = "30 Days Of JavaScript";
+      let str_4 = str_3.lastIndexOf("a");
+    </script>
+
+    <h2>Q.54 Form Validtion in JS?</h2>
+    <p>=>formValidation.html</p>
+
+    <h2>Q.55 Form in Email, number, Password, Validation?</h2>
+    <p>=>formValidation.html</p>
+
+    <h2>Q.56 Dynamic Form Validation in JS?</h2>
+    <p>=>formValidation.html</p>
+
+    <h2>Q.57 how many type of JS Event? How to use it ?</h2>
+    <p>
+      =>
+      <li>Mouse events (e.g., click, mouseover, mouseout)</li>
+      <li>Keyboard events (e.g., keydown, keyup)</li>
+      <li>Form events (e.g., submit, change, focus)</li>
+      <li>Document events (e.g., load, unload)</li>
+      <li>Window events (e.g., resize, scroll)</li>
+      <li>Touch events (e.g., touchstart, touchmove, touchend)</li>
+    </p>
+    <button onclick="document.getElementById('demo').innerHTML=Date()">
+      The time is?
+    </button>
+    <p id="demo"></p>
+
+    <h2>Q.59 What is Bom vs Dom in JS?</h2>
+    <p>
+      =>DOM : The document object represents the whole html document. When html
+      document is loaded in the browser, it becomes a document object. => BOM :
+      Thewindow object represents a window in browser. An object of window is
+      created automatically by the browser.
+    </p>
+
+    <h2>Q.60 Array vs object defences in JS?</h2>
+    <p>
+      The main difference between them is how they store data. Arrays store data
+      in consecutive memory locations, and objects store data in named key-value
+      pairs
+    </p>
+
+    <h2>Q.61 Split the string into an array using split() Method?</h2>
+    <p>=></p>
+
+    <script>
+      let text = "hello";
+      const chars = text.split("");
+    </script>
+
+    <h2>
+      Q.62 Check if the string contains a word Script using includes() method?
+    </h2>
+    <p>=></p>
+    <script>
+      let text1 = "Hello world, welcome to the universe.";
+      let text2 = text1.includes("world");
+    </script>
+
+    <h2>
+      Q.63 Change all the string characters to lowercase letters using
+      toLowerCase() Method.
+    </h2>
+    <p>=></p>
+    <script>
+      let text3 = "BHARAT";
+      let text4 = text3.toLowerCase();
+    </script>
+
+    <h2>
+      Q.64 What is Character at index 15 in ’30 Days of JavaScript’ string? Use
+      charAt() method.
+    </h2>
+    <p>=>s</p>
+    <script>
+      let str_5 = "30 Days of JavaScript";
+      let str_6 = str_5.charAt(15);
+    </script>
+
+    <h2>Q.65 copy to one string to another string in JS?</h2>
+    <p>=>bharat</p>
+    <script>
+      let str_7 = "bharat";
+      let str_8 = str_7;
+    </script>
+
+    <script>
+      let str5 = "bharat";
+      let str6 = "";
+    </script>
+
+    <h2>Q.66 Find the length of a string without using libraryFunction?</h2>
+    <p>=>6</p>
+    <script>
+      let lenth = 0;
+      let srt_9 = "bharat";
+
+      while (srt_9[lenth] !== undefined) {
+        lenth++;
+      }
+    </script>
+
+    <h2>• What is JavaScript?</h2>
+    <p>
+      =>JavaScript is a programming language used to create dynamic content for
+      websites. It achieves this by adding new HTML elements while modifying
+      existing ones. Many coders enhance web development skills using JavaScript
+      to create user-friendly and interactive websites.
+    </p>
+
+    <h2>• What is the use of isNaN function?</h2>
+    <p>
+      =>isNaN() returns true if a number is Not-a-Number. In other words:
+      isNaN() converts the value to a number before testing it.
+    </p>
+
+    <h2>• What is negative Infinity?</h2>
+    <p>
+      =>NEGATIVE_INFINITY is a special numeric value that is returned when an
+      arithmetic operation or mathematical function generates a negative value
+      greater than the largest representable number in JavaScript (i.e., more
+      negative than -Number. MAX_VALUE) . JavaScript displays the
+      NEGATIVE_INFINITY value as -Infinity .
+    </p>
+
+    <h2>• Which company developed JavaScript?</h2>
+    <p>
+      =>JavaScript was created at Netscape Communications by Brendan Eich in
+      1995. Netscape and Eich designed JavaScript as a scripting language for
+      use with the company's flagship web browser, Netscape Navigator.
+    </p>
+
+    <h2>• What are undeclared and undefined variables?</h2>
+    <p>
+      =>Undefined: It occurs when a variable has been declared but has not been
+      assigned any value. Undefined is not a keyword. Undeclared: It occurs when
+      we try to access any variable that is not initialized or declared earlier
+      using the var or const keyword
+    </p>
+    <h2>• Write the code for adding new elements dynamically?</h2>
+    <p>=>newelements.html</p>
+
+    <h2>• What is the difference between ViewState and SessionState?</h2>
+    <p>
+      =>View state can only be visible from a single page and not multiple
+      pages. Session state value availability is across all pages available in a
+      user session. It will retain values in the event of a postback operation
+      occurring. In session state, user data remains in the server.
+    </p>
+
+    <h2>• What is === operator?</h2>
+    <p>
+      =>The strict equality ( === ) operator checks whether its two operands are
+      equal, returning a Boolean result. Unlike the equality operator, the
+      strict equality operator always considers operands of different types to
+      be different.
+    </p>
+
+    <h2>• How can the style/class of an element be changed?</h2>
+    <p>
+      =>Use the document. querySelector() method to select that element by
+      passing its CSS selector as an argument. This method returns the first
+      element in the document that matches the selector. Access the classList
+      property of the selected element to manipulate its classes.
+    </p>
+
+    <h2>• How to read and write a file using JavaScript?</h2>
+    <p>
+      =>eadFile() and rs. writeFile() methods are used to read and write of a
+      file using javascript. The file is read using the fs. readFile() function,
+      which is an inbuilt method.
+    </p>
+
+    <h2>• What are all the looping structures in JavaScript?</h2>
+    <p>
+      =>JavaScript Loops are powerful tools for performing repetitive tasks
+      efficiently. Loops in JavaScript execute a block of code again and again
+      while the condition is true
+    </p>
+
+    <h2>
+      • How can you convert the string of any base to an integer in JavaScript?
+    </h2>
+    <p>
+      =>Another way to convert strings to number is by using some JavScript math
+      methods. You can use the floor() method, which will round down the passed
+      value to the nearest integer. The ceil() method, which is the opposite of
+      floor() , rounds up to the nearest integer.
+    </p>
+
+    <h2>• What is the function of the delete operator?</h2>
+    <p>
+      =>In JavaScript, the delete operator is employed to delete a property of
+      an object. After deleting the actual property, that property won't be
+      accessible and returns undefined .
+    </p>
+
+    <h2>• What are all the types of Pop up boxes available in JavaScript?</h2>
+    <p>
+      =>In Javascript, popup boxes are used to display the message or
+      notification to the user. There are three types of pop-up boxes in
+      JavaScript: Table of Content. Alert Box. Prompt Box
+    </p>
+
+    <h2>• What is the use of Void (0)?</h2>
+    <p>
+      =>This operator allows evaluating expressions that produce a value into
+      places where an expression that evaluates to undefined is desired. The
+      void operator is often used merely to obtain the undefined primitive
+      value, usually using void(0) (which is equivalent to void 0 ).
+    </p>
+
+    <h2>• How can a page be forced to load another page in JavaScript?</h2>
+    <p>
+      =>In JavaScript, we can use window. location object to force a page to
+      load another page. We can use the location object to set the URL of a new
+      page.
+    </p>
+    <h2>• What are the disadvantages of using innerHTML in JavaScript?</h2>
+    <p>
+      =>It is very slow because as inner HTML already parses the content even we
+      have to parse the content again so that's why it takes time.
+    </p>
+    <h2>• Create password field with show hide functionalities</h2>
+    <p>=>hideShow.html</p>
+
+    <h2>• Create basic math operation in JS</h2>
+    <p>=>calculator.html</p>
+
+    <h2>• Create a slider using JavaScript</h2>
+    <p>=>slider.html</p>
+  </body>
+</html>
